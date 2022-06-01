@@ -1,0 +1,184 @@
+
+  DATA: FILE IS MI AARI2.dat;
+
+  VARIABLE: NAMES ARE Gender Nativity AARI1 AARI2 AARI3 AARI4 AARI5
+   AARI6 AARI7 AARI8 AARI9 AARI10 AARI11 AARI12 AARI13 
+    AARI14 AARI15 AARI16 AARI17 AARI18 AARI19 AARI20
+     AARI21 AARI22 AARI23 AARI24 AARI25 AARI26 AARI27 
+    AARI28 AARI29 AARI30 AARI31 AARI32 AARI33 AARI34
+     AARI35 AARI36 AARI37 AARI38 AARI39 AARI40 AARI41 
+    AARI42 AARI43 AARI44 AARI45 AARI46 AARI47 AARI48
+     AARI49 AARI50 AARI51 AARI52 AARI53 AARI54 AARI55 
+    AARI56 AARI57 AARI58 AARI59 AARI60 AARI61 AARI62
+    AARI63 AARI64 AARI65 AARI66 AARI67 AARI68 AARI69 
+    AARI70 AARI71 AARI72 AARI73 AARI74 AARI75;
+ 
+            USEVAR Gender AARI72 AARI8 AARI51 AARI64 
+            AARI34 AARI37 AARI49 AARI48 AARI39
+            AARI29 AARI27 AARI26 AARI30; 
+
+            GROUPING = Gender (0=Women 1=Men);
+
+            MISSING = all(-999);
+ANALYSIS:
+ ITERATIONS=1000000;
+
+ MODEL: 
+ ! factor loadings of first-order factors
+
+ AAU BY AARI72@1
+        AARI8(g8)
+        AARI51(g51)
+        AARI64(g64);
+
+ TCC BY AARI34@1
+        AARI37(g37)
+        AARI49(g49)
+        AARI48(g48)
+        AARI39(g39);
+
+ IRS BY AARI29@1
+        AARI27(g27) 
+        AARI26(g26)
+        AARI30(g30);
+ 
+ AARI BY AARI72@1
+         AARI8(g8)
+         AARI51(g51)
+         AARI64(g64)
+         AARI34(g34)
+         AARI37(g37)
+         AARI49(g49)
+         AARI48(g48)
+         AARI39(g39)
+         AARI29(g29)
+         AARI27(g27) 
+         AARI26(g26)
+         AARI30(g30);
+
+! intercepts of measured items
+ [AARI72*](int1);
+ [AARI8*](int2);
+ [AARI51*](int3);
+ [AARI64*](int4);
+ [AARI34*](int5);
+ [AARI37*](int6);
+ [AARI49*](int7);
+ [AARI48*](int8);
+ [AARI39*](int9);
+ [AARI29*](int10);
+ [AARI27*](int11);
+ [AARI26*](int12);
+ [AARI30*](int13);
+
+! residual variances of items
+ AARI72*(rv1);
+ AARI8*(rv2);
+ AARI51*(rv3);
+ AARI64*(rv4);
+ AARI34*(rv5);
+ AARI37*(rv6);
+ AARI49*(rv7);
+ AARI48*(rv8);
+ AARI39*(rv9);
+ AARI29*(rv10);
+ AARI27*(rv11);
+ AARI26*(rv12);
+ AARI30*(rv13);
+
+! intecepts of factors
+ [AAU@0];
+ [IRS@0];
+ [TCC@0];
+ [AARI@0];
+
+! variances of factors
+ AAU*(va1);
+ IRS*(va2);
+ TCC*(va3);
+ AARI@.05;
+ AARI WITH TCC@0;
+ AARI WITH IRS@0;
+ AARI WITH AAU@0;
+
+  MODEL Women: 
+ ! factor loadings of first-order factors
+
+ AAU BY AARI72@1
+        AARI8(g8)
+        AARI51(g51)
+        AARI64(g64);
+
+ TCC BY AARI34@1
+        AARI37(g37)
+        AARI49(g49)
+        AARI48(g48)
+        AARI39(g39);
+
+ IRS BY AARI29@1
+        AARI27(g27) 
+        AARI26(g26)
+        AARI30(g30);
+ 
+ AARI BY AARI72@1
+         AARI8(g8)
+         AARI51(g51)
+         AARI64(g64)
+         AARI34(g34)
+         AARI37(g37)
+         AARI49(g49)
+         AARI48(g48)
+         AARI39(g39)
+         AARI29(g29)
+         AARI27(g27) 
+         AARI26(g26)
+         AARI30(g30);
+
+
+
+! intercepts of measured items
+ [AARI72*];
+ [AARI8*];
+ [AARI51*];
+ [AARI64*];
+ [AARI34*];
+ [AARI37*];
+ [AARI49*];
+ [AARI48*];
+ [AARI39*];
+ [AARI29*];
+ [AARI27*];
+ [AARI26*];
+ [AARI30*];
+
+! residual variances of items
+ AARI72*;
+ AARI8*;
+ AARI51*;
+ AARI64*;
+ AARI34*;
+ AARI37*;
+ AARI49*;
+ AARI48*;
+ AARI39*;
+ AARI29*;
+ AARI27*;
+ AARI26*;
+ AARI30*;
+
+! intecepts of factors
+ [AAU@0];
+ [IRS@0];
+ [TCC@0];
+ [AARI@0];
+
+! variances of factors
+ AAU*;
+ IRS*;
+ TCC*;
+ AARI*;
+ AARI WITH TCC@0;
+ AARI WITH IRS@0;
+ AARI WITH AAU@0;
+
+ OUTPUT: stdyx; modindices(3.84);
