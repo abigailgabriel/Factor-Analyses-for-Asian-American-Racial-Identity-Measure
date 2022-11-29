@@ -4,4 +4,10 @@ Psychological research and theory focused on distinct racialization and racial i
 
 [Yoo et al. (2021).pdf](https://github.com/abigailgabriel/Factor-Analyses-for-Asian-American-Racial-Identity-Measure/files/10114761/Yoo.et.al.2021.pdf)
 
+<img width="353" alt="Screen Shot 2022-11-29 at 11 10 49 AM" src="https://user-images.githubusercontent.com/86257471/204582094-d74c9e49-0d4f-40d2-9d0d-40abaaf02fa7.png">
 
+<img width="754" alt="Screen Shot 2022-11-29 at 11 11 09 AM" src="https://user-images.githubusercontent.com/86257471/204582165-6d5412b1-8618-4a9c-9a8a-f3bfff37df57.png">
+
+<img width="730" alt="Screen Shot 2022-11-29 at 11 11 20 AM" src="https://user-images.githubusercontent.com/86257471/204582219-cce57780-1818-4baa-998f-86621c32baa6.png">
+
+<img width="720" alt="Screen Shot 2022-11-29 at 11 11 35 AM" src="https://user-images.githubusercontent.com/86257471/204582285-4dd322ba-0888-4cbc-b9ae-f7cc66c09343.png">
